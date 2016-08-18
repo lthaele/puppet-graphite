@@ -677,6 +677,7 @@ class graphite (
   $gr_rrd_dir                             = undef,
   $gr_whitelists_dir                      = undef,
   $gr_carbon_conf_dir                     = undef,
+  $gr_carbon_pid_dir                      = undef,
   $gr_carbon_log_dir                      = undef,
   $gr_graphiteweb_log_dir                 = undef,
   $gr_graphiteweb_conf_dir                = undef,
@@ -755,6 +756,7 @@ class graphite (
   $rrd_dir_REAL                     = pick($gr_rrd_dir,                "${storage_dir_REAL}/rrd")
   $whitelists_dir_REAL              = pick($gr_whitelists_dir,         "${storage_dir_REAL}/lists")
   $carbon_conf_dir_REAL             = pick($gr_carbon_conf_dir,        "${base_dir_REAL}/conf")
+  $carbon_pid_dir_REAL              = pick($gr_carbon_pid_dir,           "${base_dir_REAL}/storage")
   $carbon_log_dir_REAL              = pick($gr_carbon_log_dir,         "${storage_dir_REAL}/log/carbon-cache")
   $graphiteweb_log_dir_REAL         = pick($gr_graphiteweb_log_dir,    "${storage_dir_REAL}/log")
   $graphiteweb_conf_dir_REAL        = pick($gr_graphiteweb_conf_dir,   "${base_dir_REAL}/conf")

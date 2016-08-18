@@ -22,7 +22,7 @@
 PYTHON_CMD='python -W ignore'
 CARBON_DAEMON="relay"
 GRAPHITE_DIR="<%= scope.lookupvar('graphite::base_dir_REAL') %>"
-PIDFILE_DIR="<%= scope.lookupvar('graphite::storage_dir_REAL') %>"
+PIDFILE_DIR="<%= scope.lookupvar('graphite::carbon_pid_dir_REAL') %>"
 pidfile=""
 OPERATION="$1"
 if [ $# -gt 1 ]; then

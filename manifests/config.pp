@@ -109,6 +109,7 @@ class graphite::config inherits graphite::params {
 
   file { [
     $::graphite::storage_dir_REAL,
+    $::graphite::carbon_pid_dir_REAL,
     $::graphite::rrd_dir_REAL,
     $::graphite::whitelists_dir_REAL,
     $::graphite::graphiteweb_log_dir_REAL,
