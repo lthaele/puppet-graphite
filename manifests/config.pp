@@ -109,7 +109,6 @@ class graphite::config inherits graphite::params {
 
   file { [
     $::graphite::storage_dir_REAL,
-    $::graphite::carbon_pid_dir_REAL,
     $::graphite::rrd_dir_REAL,
     $::graphite::whitelists_dir_REAL,
     $::graphite::graphiteweb_log_dir_REAL,
@@ -145,6 +144,12 @@ class graphite::config inherits graphite::params {
       group  => $carbon_group,
       mode   => '0755',
       owner  => $carbon_user;
+
+    $::graphite::carbon_pid_dir_REAL:
+      ensure => directory,
+      group  => $carbon_group,
+      mode   => '0775',
+      owner  => $gr_web_user_REAL;
   }
 
   # Lets ensure graphite.db owner is the same as gr_web_user_REAL
