@@ -282,7 +282,7 @@ class graphite::config inherits graphite::params {
   }
 
   # startup carbon engine
-
+  
   if $::graphite::gr_enable_carbon_cache {
     service { 'carbon-cache':
       ensure     => running,

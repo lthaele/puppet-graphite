@@ -514,6 +514,7 @@ class graphite (
   $gr_carbon_metric_prefix                = 'carbon',
   $gr_carbon_metric_interval              = 60,
   $gr_carbon_relay_ulimit                 = undef,
+  $gr_carbon_ramdisk                      = undef,
   $gr_line_receiver_interface             = '0.0.0.0',
   $gr_line_receiver_port                  = 2003,
   $gr_enable_udp_listener                 = 'False',
@@ -763,6 +764,7 @@ class graphite (
   $graphiteweb_webapp_dir_REAL      = pick($gr_graphiteweb_webapp_dir, "${base_dir_REAL}/webapp")
   $graphiteweb_storage_dir_REAL     = $gr_graphiteweb_storage_dir
   $graphiteweb_install_lib_dir_REAL = pick($gr_graphiteweb_install_lib_dir, "${graphiteweb_webapp_dir_REAL}/graphite")
+  $carbon_ramdisk_REAL = pick($::graphite::gr_carbon_ramdisk, "false")
 
   # The anchor resources allow the end user to establish relationships
   # to the "main" class and preserve the relationship to the
